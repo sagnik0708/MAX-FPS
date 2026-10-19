@@ -934,8 +934,6 @@ function updateCollisionCache() {
 function boot() {
   try {
     if (!canvas) throw new Error('Game canvas is missing.');
-    const caps = Engine.IsSupported();
-    if (!caps) throw new Error('WebGL is unavailable in this browser.');
     engine = new Engine(canvas, true, {
       preserveDrawingBuffer: false,
       stencil: true,
@@ -1015,7 +1013,10 @@ function boot() {
   } catch (error) {
     console.error('MAX-FPS could not initialize.', error);
     bootOverlay?.classList.add('fade-out');
-    fatalError?.classList.remove('hidden');
+    if (fatalError) {
+      fatalError.textContent = `Crash: ${error.message}`;
+      fatalError.classList.remove('hidden');
+    }
   }
 }
 
