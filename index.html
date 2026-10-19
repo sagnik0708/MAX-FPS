@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no" />
+    <meta name="theme-color" content="#090d0d" />
+    <meta name="description" content="MAX-FPS — a mobile-first tactical body-camera FPS." />
+    <title>MAX-FPS // BODYCAM PROTOCOL</title>
+  </head>
+  <body>
+    <main id="game-shell" aria-label="MAX-FPS tactical FPS game">
+      <canvas id="game-canvas" aria-label="3D tactical training environment"></canvas>
+      <div class="camera-grain" aria-hidden="true"></div>
+      <div class="camera-vignette" aria-hidden="true"></div>
+      <div id="damage-flash" aria-hidden="true"></div>
+      <div id="fatal-error" class="fatal-error hidden" role="alert">
+        <b>RENDERER UNAVAILABLE</b>
+        <span>This build needs a modern browser with WebGL 2 support.</span>
+      </div>
+      <div id="boot-overlay" class="boot-overlay">
+        <div class="boot-brand"><span>MAX</span><b>/</b><span>FPS</span></div>
+        <div class="boot-loader"><i></i></div>
+        <div class="boot-status">INITIALIZING FIELD SYSTEMS</div>
+      </div>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
